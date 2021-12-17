@@ -1,22 +1,13 @@
-import machine
+import RPi.GPIO as GPIO
 import time
+GPIO.setmode( GPIO.BCM )
+GPIO.setwarnings( 0 )
 
 print( "GPIO blink" )
 
-pin = machine.Pin( 22, machine.Pin.OUT )
+GPIO.setup( 18, GPIO.OUT )
 while True:
-     pin.on()
-     time.sleep( 2.0 )
-     pin.off()
-     time.sleep( 0.1 )
-
-"""
->>> import machine
->>> import time
->>> pin = machine.Pin(0, machine.Pin.OUT)
->>> for i in range(10):
-...     pin.on()
-...     time.sleep(0.5)
-...     pin.off()
-...     time.sleep(0.5)
-"""
+   GPIO.output( 18, GPIO.HIGH )
+   time.sleep( 0.5 )
+   GPIO.output( 18, GPIO.LOW )
+   time.sleep( 0.5 )

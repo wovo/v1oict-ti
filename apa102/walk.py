@@ -63,7 +63,7 @@ def walk( clock_pin, data_pin, delay, n = 8 ):
       for x in range( 0, n ):
          apa102( clock_pin, data_pin, colors( x, n, red, blue ) )
          time.sleep( delay )
-      for x in range( n - 1, 1, -1 ):
+      for x in range( n - 2, 0, -1 ):
          apa102( clock_pin, data_pin, colors( x, n, red, blue ) )
          time.sleep( delay )
          

@@ -34,4 +34,4 @@ def morse_text( pin_nr, dot_length, text ):
 
 led = 18
 GPIO.setup( led, GPIO.OUT )
-morse_text( 18, 0.2, "Hello world" )
+morse_text( led, 0.2, "Hello world" )
